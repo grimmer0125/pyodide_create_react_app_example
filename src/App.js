@@ -1,7 +1,21 @@
+import { useRef, useEffect, useState, useCallback } from "react";
+
 import logo from './logo.svg';
 import './App.css';
 
+async function test() {
+  let pyodide_pkg = await import("pyodide/pyodide.js");
+}
+
 function App() {
+  useEffect(() => {
+    async function init() {
+      await test()
+    }
+    init();
+
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
