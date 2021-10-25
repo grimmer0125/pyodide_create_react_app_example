@@ -5,6 +5,10 @@ import './App.css';
 
 async function test() {
   let pyodide_pkg = await import("pyodide/pyodide.js");
+
+  let pyodide = await pyodide_pkg.loadPyodide({
+    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/",
+  });
 }
 
 function App() {
